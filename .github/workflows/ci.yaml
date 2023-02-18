@@ -6,7 +6,7 @@ on:
 
 jobs:
   test-with-dotnet:
-    name: Lint with `dotnet`
+    name: Test with `dotnet`
     runs-on: windows-2022
     steps:
       - uses: actions/checkout@v3
@@ -15,6 +15,7 @@ jobs:
   lint-with-roslynator:
     name: Lint with `roslynator`
     runs-on: windows-2022
+    needs: test-with-dotnet
     steps:
       - uses: actions/checkout@v3
       - run: |
