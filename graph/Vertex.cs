@@ -8,7 +8,7 @@ namespace Graph
         public TValue Value
         {
             get => value;
-            set => this.value = value ?? throw new ArgumentNullException("Value", "Vertex can't contain null");
+            set => this.value = value ?? throw new ArgumentNullException(nameof(Value), "Vertex can't contain null");
         }
 
         public Vertex(TValue value) => Value = value;
