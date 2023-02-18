@@ -1,0 +1,15 @@
+name: CI
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint-with-roslynator:
+    name: Lint with `roslynator`
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          dotnet tool install -g roslynator.dotnet.cli
+          roslynator analyze graph.sln
