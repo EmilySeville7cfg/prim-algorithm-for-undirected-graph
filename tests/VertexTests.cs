@@ -10,7 +10,7 @@ namespace tests
         [Test]
         public void Expect_ArgumentNullException_When_NullPassedToContructor()
         {
-            Assert.Throws<ArgumentNullException>(() => new Vertex<int?>(null));
+            Assert.Throws<ArgumentNullException>(() => new Vertex<Nullable<int>>(null));
             Assert.Throws<ArgumentNullException>(() => new Vertex<int?>(null,
                 new List<Vertex<int?>>() { new Vertex<int?>(0) }));
             Assert.Throws<ArgumentNullException>(() => new Vertex<int?>(0, null));
